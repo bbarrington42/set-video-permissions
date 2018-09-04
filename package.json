@@ -1,0 +1,28 @@
+{
+  "name": "set-video-permissions",
+  "version": "1.0.0",
+  "description": "Video transcoding as example serverless project from MEAP book Serverless Architectures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "run-local-lambda --file index.js --event tests/event.json",
+    "deploy": "aws lambda update-function-code --function-name set-video-permissions --zip-file fileb://Lambda-Deployment.zip",
+    "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
+  },
+  "keywords": [
+    "tutorial",
+    "MEAP",
+    "serverless"
+  ],
+  "author": "Bill Barrington",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.307.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbarrington42/set-video-permissions.git"
+  },
+  "devDependencies": {
+    "run-local-lambda": "^1.1.1"
+  }
+}
